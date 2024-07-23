@@ -28,6 +28,16 @@
             <div id="navigation" class="collapse navbar-collapse flex-column">
                 <img class="mb-3 mx-auto logo" src="images/logo.png" alt="logo">
 
+                <?php
+                wp_nav_menu(
+                    array(
+                        'menu' => 'primary', // 指定菜单的名称(functions.php中注册的菜单名称)
+                        'container' => '',
+                        'theme_location' => 'primary'
+                    )
+                );
+                ?>
+
                 <ul class="navbar-nav flex-column text-sm-center text-md-left">
                     <li class="nav-item active">
                         <a class="nav-link" href="index.html"><i class="fas fa-home fa-fw mr-2"></i>Blog Home <span class="sr-only">(current)</span></a>
@@ -59,5 +69,5 @@
     </header>
     <div class="main-wrapper">
         <header class="page-title theme-bg-light text-center gradient py-5">
-            <h1 class="heading">Blog Home Page Heading</h1>
+            <h1 class="heading"><?php the_title() ?></h1>
         </header>

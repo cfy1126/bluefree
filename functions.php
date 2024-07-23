@@ -8,6 +8,17 @@ function bluefree_theme_support()
 
 add_action('after_setup_theme', 'bluefree_theme_support');
 
+function bluefree_menus()
+{
+    $locations = array(
+        'primary' => "Desktop Primary Left Sidebar",
+        'footer' => "Footer Menu Items"
+    );
+    register_nav_menus($locations);
+}
+
+add_action('init', 'bluefree_menus');
+
 function bluefree_register_styles()
 {
     $version = wp_get_theme()->get('Version');
